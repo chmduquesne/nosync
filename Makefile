@@ -1,7 +1,7 @@
 all: libnosync.so
 
 libnosync.so:
-	gcc -g -Wall -fPIC -shared nosync.c -o libnosync.so
+	gcc -g -Wall -fPIC -shared nosync.c -o libnosync.so -ldl
 
 install: all
 	install -m755 libnosync.so /lib/libnosync.so
