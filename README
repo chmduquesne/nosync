@@ -1,0 +1,7 @@
+Nosync is a library allowing you to selectively dismiss
+sync/fsync/fdatasync calls from some process, in order to reduce battery
+consumption.
+
+You activate it by creating the file "/var/run/nosync". It reads its
+configuration from "/etc/nosync.conf". The idea of nosync was taken from
+http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=310436
