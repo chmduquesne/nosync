@@ -19,14 +19,14 @@
  *
  */
 
-#include <unistd.h> /* for fsync ... */
-#include <dlfcn.h> /* for dlopen */
-#include <stdio.h> /* for printf */
-#include <pwd.h> /* getting username */
-#include <errno.h> /* getting username */
-#include <stdlib.h> /* for exit */
-#include <string.h> /* strtok_r */
-#include <stdbool.h> /* booleans */
+#include <unistd.h>
+#include <dlfcn.h>
+#include <stdio.h>
+#include <pwd.h>
+#include <errno.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
 #include <syslog.h>
 
 #define RUN_FILE "/var/run/nosync"
