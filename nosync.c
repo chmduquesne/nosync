@@ -61,8 +61,7 @@ bool fdatasync_authorized = true;
 
 /* Returns true if the calls should be redirected. */
 bool enabled() {
-    return true;
-    /*return exists(RUN_FILE);*/
+    return exists(RUN_FILE);
 }
 
 /* user running the library */
