@@ -9,7 +9,7 @@ install: all
 	echo "/lib/libnosync.so" >> /etc/ld.so.preload
 
 uninstall:
-	sed -i "#/lib/libnosync.so##g" /etc/ld.so.preload
+	sed -i "/\/lib\/libnosync.so/d" /etc/ld.so.preload
 	rm -f /lib/libnosync.so
 	rm -f /etc/nosync.conf
 
