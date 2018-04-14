@@ -256,6 +256,6 @@ fdatasync (int fd) {
     if (!enabled() || fdatasync_authorized){
         return __real_fdatasync(fd);
     }
-    fprintf(stderr, "fdatasync dismissed for process %s, user %s\n", process, user);
+    /*fprintf(stderr, "fdatasync dismissed for process %s, user %s\n", process, user);*/
     return 0;
 }
