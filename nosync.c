@@ -231,7 +231,7 @@ sync (void) {
     if (!enabled() || sync_authorized){
         return __real_sync();
     }
-    syslog(LOG_INFO, "sync dismissed for process %s, user %s", process, user);
+    //syslog(LOG_INFO, "sync dismissed for process %s, user %s", process, user);
 }
 
 /* Our fsync replacement. Will actually fsync only if authorized */
@@ -243,7 +243,7 @@ fsync (int fd) {
     if (!enabled() || fsync_authorized){
         return __real_fsync(fd);
     }
-    syslog(LOG_INFO, "fsync dismissed for process %s, user %s\n", process, user);
+    //syslog(LOG_INFO, "fsync dismissed for process %s, user %s\n", process, user);
     return 0;
 }
 
