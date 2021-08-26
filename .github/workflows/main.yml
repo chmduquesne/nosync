@@ -1,0 +1,17 @@
+name: Mirror
+on: [ push, delete, create ]
+
+
+# Ensures that only one mirror task will run at a time.
+concurrency:
+  group: git-mirror
+jobs:
+  git-mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: git-mirror-2
+        uses: TheTipsyTurtle/mirror-action@master
+        with:
+          REMOTE: 'https://gitlab.com/marcello.cerruti/test.git'
+          GIT_USERNAME: marcello.cerruti
+          GIT_PASSWORD: k9ZEExiqjxBejsiuHcW5
