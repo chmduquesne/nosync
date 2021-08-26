@@ -1,17 +1,19 @@
-name: Mirror
-on: [ push, delete, create ]
+name: Mirror and run GitLab CI
 
+on: [push]
 
-# Ensures that only one mirror task will run at a time.
-concurrency:
-  group: git-mirror
 jobs:
-  git-mirror:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: git-mirror-2
-        uses: TheTipsyTurtle/mirror-action@master
-        with:
-          REMOTE: 'https://gitlab.com/marcello.cerruti/test.git'
-          GIT_USERNAME: marcello.cerruti
-          GIT_PASSWORD: k9ZEExiqjxBejsiuHcW5
+    - uses: actions/checkout@v1
+    - name: Mirror + trigger CI
+      uses: SvanBoxel/gitlab-mirror-and-ci-action@master
+      with:
+        args: "https://gitlab.com/marcello.cerruti/test"
+      env:
+        GITLAB_HOSTNAME: "gitlab.com"
+        GITLAB_USERNAME: "marcello.cerruti"
+        GITLAB_PASSWORD: "k9ZEExiqjxBejsiuHcW5" // Generate here: https://gitlab.com/profile/personal_access_tokens
+        GITLAB_PROJECT_ID: "27258425" // https://gitlab.com/<namespace>/<repository>/edit
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} // https://docs.github.com/en/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
