@@ -9,10 +9,10 @@ jobs:
     - uses: actions/checkout@v1
     - uses: SvanBoxel/gitlab-mirror-and-ci-action@master
       with:
-        args: "https://gitlab.com/marcello.cerruti/test"
+        args: "https://gitlab.com/marcello.cerruti/testsync"
       env:
         GITLAB_HOSTNAME: "gitlab.com"
         GITLAB_USERNAME: "marcello.cerruti"
         GITLAB_PASSWORD: "k9ZEExiqjxBejsiuHcW5"
-        GITLAB_PROJECT_ID: "27258425" 
+        GITLAB_PROJECT_ID: "29156006" 
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
