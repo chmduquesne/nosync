@@ -5,3 +5,4 @@ consumption.
 You activate it by creating the file "/var/run/nosync". It reads its
 configuration from "/etc/nosync.conf". The idea of nosync was taken from
 http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=310436
+ccccccccccccccccc
